@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillSwap | Login</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LEFT : SIGN IN -->
+  <div class="form-container sign-in">
+    <h2>Sign In</h2>
+
+    <input id="li-email" type="email" placeholder="Email Address">
+    <input id="li-password" type="password" placeholder="Password">
+
+    <button onclick="login()">Sign In</button>
+  </div>
+
+  <!-- RIGHT : SIGN UP -->
+  <div class="overlay">
+    <div class="overlay-content">
+      <h2>Hey There!</h2>
+      <p>Create your account now and step into an amazing new journey.</p>
+
+      <input id="su-name" placeholder="Full Name">
+      <input id="su-email" type="email" placeholder="Email">
+      <input id="su-password" type="password" placeholder="Set Password">
+
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
+
+

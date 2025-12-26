@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #dbeafe, #0f766e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 850px;
+  height: 500px;
+  background: white;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* LEFT */
+.sign-in {
+  width: 50%;
+  padding: 60px;
+}
+
+.sign-in h2 {
+  margin-bottom: 20px;
+}
+
+.sign-in input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.sign-in button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: #0f766e;
+  color: white;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.overlay {
+  width: 50%;
+  background: linear-gradient(to bottom right, #0f766e, #064e3b);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.overlay-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 25px;
+  border: none;
+}
+
+.overlay-content button {
+  margin-top: 10px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
