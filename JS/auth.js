@@ -1,3 +1,23 @@
+// Translation helper for auth.js
+function getTranslation(key) {
+  const currentLang = localStorage.getItem("lang") || "en";
+  const translations = {
+    en: {
+      fillAllFields: "Please fill all fields",
+      userExists: "User already exists. Please login.",
+      accountCreated: "Account created successfully! Now login.",
+      invalidCredentials: "Invalid credentials"
+    },
+    hi: {
+      fillAllFields: "कृपया सभी फ़ील्ड भरें",
+      userExists: "उपयोगकर्ता पहले से मौजूद है। कृपया लॉगिन करें।",
+      accountCreated: "खाता सफलतापूर्वक बनाया गया! अब लॉगिन करें।",
+      invalidCredentials: "अमान्य क्रेडेंशियल"
+    }
+  };
+  return translations[currentLang]?.[key] || translations.en[key] || key;
+}
+
 // SIGN UP FUNCTION
 function signup() {
   const name = document.getElementById("su-name").value;
@@ -5,7 +25,7 @@ function signup() {
   const password = document.getElementById("su-password").value;
 
   if (!name || !email || !password) {
-    alert("Please fill all fields");
+    alert(getTranslation("fillAllFields"));
     return;
   }
 
@@ -13,14 +33,14 @@ function signup() {
 
   const userExists = users.find(user => user.email === email);
   if (userExists) {
-    alert("User already exists. Please login.");
+    alert(getTranslation("userExists"));
     return;
   }
 
   users.push({ name, email, password });
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert("Account created successfully! Now login.");
+  alert(getTranslation("accountCreated"));
 }
 
 
@@ -36,7 +56,7 @@ function login() {
   );
 
   if (!user) {
-    alert("Invalid credentials");
+    alert(getTranslation("invalidCredentials"));
     return;
   }
 

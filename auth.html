@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SkillSwap | Login</title>
-  <link rel="stylesheet" href="css/auth.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="SkillSwap | Login" data-hi="SkillSwap | लॉगिन">SkillSwap | Login</title>
+  <link rel="stylesheet" href="CSS/auth.css">
 </head>
 <body>
 
@@ -11,31 +12,50 @@
 
   <!-- LEFT : SIGN IN -->
   <div class="form-container sign-in">
-    <h2>Sign In</h2>
+    <h2 data-en="Sign In" data-hi="साइन इन">Sign In</h2>
 
-    <input id="li-email" type="email" placeholder="Email Address">
-    <input id="li-password" type="password" placeholder="Password">
+    <input id="li-email" type="email" 
+           data-placeholder-en="Email Address" 
+           data-placeholder-hi="ईमेल पता"
+           placeholder="Email Address">
+    <input id="li-password" type="password" 
+           data-placeholder-en="Password" 
+           data-placeholder-hi="पासवर्ड"
+           placeholder="Password">
 
-    <button onclick="login()">Sign In</button>
+    <button onclick="login()" data-en="Sign In" data-hi="साइन इन">Sign In</button>
   </div>
 
   <!-- RIGHT : SIGN UP -->
   <div class="overlay">
     <div class="overlay-content">
-      <h2>Hey There!</h2>
-      <p>Create your account now and step into an amazing new journey.</p>
+      <h2 data-en="Hey There!" data-hi="नमस्ते!">Hey There!</h2>
+      <p data-en="Create your account now and step into an amazing new journey."
+         data-hi="अभी अपना खाता बनाएं और एक अद्भुत नई यात्रा में कदम रखें।">
+        Create your account now and step into an amazing new journey.
+      </p>
 
-      <input id="su-name" placeholder="Full Name">
-      <input id="su-email" type="email" placeholder="Email">
-      <input id="su-password" type="password" placeholder="Set Password">
+      <input id="su-name" 
+             data-placeholder-en="Full Name" 
+             data-placeholder-hi="पूरा नाम"
+             placeholder="Full Name">
+      <input id="su-email" type="email" 
+             data-placeholder-en="Email" 
+             data-placeholder-hi="ईमेल"
+             placeholder="Email">
+      <input id="su-password" type="password" 
+             data-placeholder-en="Set Password" 
+             data-placeholder-hi="पासवर्ड सेट करें"
+             placeholder="Set Password">
 
-      <button onclick="signup()">Sign Up</button>
+      <button onclick="signup()" data-en="Sign Up" data-hi="साइन अप">Sign Up</button>
     </div>
   </div>
 
 </div>
 
-<script src="js/auth.js"></script>
+<script src="JS/app.js"></script>
+<script src="JS/auth.js"></script>
 </body>
 </html>
 

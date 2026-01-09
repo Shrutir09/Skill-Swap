@@ -6,16 +6,22 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(to right, #dbeafe, #0f766e);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+}
+
+body.dark {
+  background: linear-gradient(to right, #020617, #064e3b);
 }
 
 .container {
-  width: 850px;
-  height: 500px;
+  width: 100%;
+  max-width: 850px;
+  min-height: 500px;
   background: white;
   display: flex;
   border-radius: 20px;
@@ -23,33 +29,85 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
+body.dark .container {
+  background: #020617;
+  border: 1px solid rgba(167, 243, 208, 0.1);
+}
+
 /* LEFT */
 .sign-in {
   width: 50%;
   padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.dark .sign-in {
+  color: #e5e7eb;
 }
 
 .sign-in h2 {
   margin-bottom: 20px;
+  font-size: 28px;
+  color: #064e3b;
+}
+
+body.dark .sign-in h2 {
+  color: #a7f3d0;
 }
 
 .sign-in input {
   width: 100%;
-  padding: 12px;
+  padding: 14px 16px;
   margin: 10px 0;
   border-radius: 25px;
-  border: 1px solid #ccc;
+  border: 2px solid #e2e8f0;
+  font-size: 16px;
+  min-height: 44px;
+  transition: all 0.2s ease;
+}
+
+body.dark .sign-in input {
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+.sign-in input:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+body.dark .sign-in input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
 }
 
 .sign-in button {
   width: 100%;
   margin-top: 15px;
-  padding: 12px;
+  padding: 14px;
   border-radius: 25px;
   border: none;
   background: #0f766e;
   color: white;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 44px;
+  transition: all 0.2s ease;
+}
+
+.sign-in button:hover {
+  background: #14b8a6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+}
+
+.sign-in button:active {
+  transform: translateY(0);
 }
 
 /* RIGHT */
@@ -65,23 +123,130 @@ body {
 .overlay-content {
   text-align: center;
   padding: 40px;
+  width: 100%;
+}
+
+.overlay-content h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.overlay-content p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.6;
 }
 
 .overlay-content input {
   width: 100%;
-  padding: 10px;
+  padding: 14px 16px;
   margin: 8px 0;
   border-radius: 25px;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  min-height: 44px;
+  transition: all 0.2s ease;
+}
+
+.overlay-content input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.overlay-content input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .overlay-content button {
   margin-top: 10px;
-  padding: 12px 30px;
+  padding: 14px 30px;
   border-radius: 25px;
-  border: 1px solid white;
+  border: 2px solid white;
   background: transparent;
   color: white;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 44px;
+  transition: all 0.2s ease;
+}
+
+.overlay-content button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.overlay-content button:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .container {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+  .sign-in,
+  .overlay {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .sign-in h2,
+  .overlay-content h2 {
+    font-size: 24px;
+  }
+
+  .overlay-content {
+    padding: 32px 24px;
+  }
+
+  .overlay-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  .container {
+    border-radius: 12px;
+  }
+
+  .sign-in,
+  .overlay {
+    padding: 24px 20px;
+  }
+
+  .sign-in h2,
+  .overlay-content h2 {
+    font-size: 22px;
+  }
+
+  .sign-in input,
+  .overlay-content input {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
